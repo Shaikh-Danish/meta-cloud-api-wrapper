@@ -1,0 +1,14 @@
+curl --location --globoff 'https://graph.facebook.com/v18.0/{{Phone-Number-ID}}/messages' \
+--header 'Content-Type: application/json' \
+--data '{
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "{{Recipient-Phone-Number}}",
+    "context": {
+        "message_id": "<MSGID_OF_MSG_YOU_ARE_REPLYING_TO>"
+    },
+    "type": "sticker",
+    "sticker": {
+        "link": "<http(s)://sticker-url>"
+    }
+}'

@@ -1,0 +1,23 @@
+curl --location --globoff 'https://graph.facebook.com/v18.0/{{Phone-Number-ID}}/messages' \
+--header 'Content-Type: application/json' \
+--data '{
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "{{Recipient-Phone-Number}}",
+    "type": "interactive",
+    "interactive": {
+        "type": "catalog_message",
+        "body": {
+            "text": "Hello! Thanks for your interest. Ordering is easy. Just visit our catalog and add items to purchase."
+        },
+        "action": {
+            "name": "catalog_message",
+            "parameters": {
+                "thumbnail_product_retailer_id": "2lc20305pt"
+            }
+        },
+        "footer": {
+            "text": "Best grocery deals on WhatsApp!"
+        }
+    }
+}'

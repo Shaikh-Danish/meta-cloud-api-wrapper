@@ -1,0 +1,55 @@
+curl --location --globoff 'https://graph.facebook.com/v18.0/{{Phone-Number-ID}}/messages' \
+--header 'Content-Type: application/json' \
+--data '{
+    "messaging_product": "whatsapp",
+    "to": "{{Recipient-Phone-Number}}",
+    "type": "contacts",
+    "contacts": [
+        {
+            "addresses": [
+                {
+                    "street": "<ADDRESS_STREET>",
+                    "city": "<ADDRESS_CITY>",
+                    "state": "<ADDRESS_STATE>",
+                    "zip": "<ADDRESS_ZIP>",
+                    "country": "<ADDRESS_COUNTRY>",
+                    "country_code": "<ADDRESS_COUNTRY_CODE>",
+                    "type": "<HOME|WORK>"
+                }
+            ],
+            "birthday": "<CONTACT_BIRTHDAY>",
+            "emails": [
+                {
+                    "email": "<CONTACT_EMAIL>",
+                    "type": "<WORK|HOME>"
+                }
+            ],
+            "name": {
+                "formatted_name": "<CONTACT_FORMATTED_NAME>",
+                "first_name": "<CONTACT_FIRST_NAME>",
+                "last_name": "<CONTACT_LAST_NAME>",
+                "middle_name": "<CONTACT_MIDDLE_NAME>",
+                "suffix": "<CONTACT_SUFFIX>",
+                "prefix": "<CONTACT_PREFIX>"
+            },
+            "org": {
+                "company": "<CONTACT_ORG_COMPANY>",
+                "department": "<CONTACT_ORG_DEPARTMENT>",
+                "title": "<CONTACT_ORG_TITLE>"
+            },
+            "phones": [
+                {
+                    "phone": "<CONTACT_PHONE>",
+                    "wa_id": "<CONTACT_WA_ID>",
+                    "type": "<HOME|WORK>"
+                }
+            ],
+            "urls": [
+                {
+                    "url": "<CONTACT_URL>",
+                    "type": "<HOME|WORK>"
+                }
+            ]
+        }
+    ]
+}'

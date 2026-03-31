@@ -1,0 +1,11 @@
+curl --location --globoff 'https://graph.facebook.com/v18.0/{{Phone-Number-ID}}/messages' \
+--header 'Content-Type: application/json' \
+--data '{
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "{{Recipient-Phone-Number}}",
+    "type": "audio",
+    "audio": {
+        "link": "http(s)://audio-url"
+    }
+}'
