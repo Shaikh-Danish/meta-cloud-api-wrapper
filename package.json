@@ -1,6 +1,6 @@
 {
   "name": "meta-cloud-api-wrapper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Comprehensive, type-safe TypeScript wrapper for the Meta Cloud API. Effortlessly parse webhooks, send messages, manage flows, and build templates for WhatsApp Business.",
   "type": "module",
   "main": "./dist/index.cjs",

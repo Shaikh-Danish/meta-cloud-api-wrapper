@@ -481,6 +481,53 @@ const reactionWebhook = {
   ],
 };
 
+const flowWebhook = {
+  object: 'whatsapp_business_account',
+  entry: [
+    {
+      id: 'WABA_001',
+      changes: [
+        {
+          value: {
+            messaging_product: 'whatsapp',
+            metadata: {
+              display_phone_number: '15551234567',
+              phone_number_id: 'PHONE_001',
+            },
+            contacts: [
+              {
+                profile: { name: 'Danish' },
+                wa_id: '919876543210',
+              },
+            ],
+            messages: [
+              {
+                from: '919876543210',
+                id: 'wamid.flow001',
+                timestamp: '1710000011',
+                type: 'interactive',
+                context: {
+                  from: '15551234567',
+                  id: 'wamid.original_flow_msg',
+                },
+                interactive: {
+                  type: 'nfm_reply',
+                  nfm_reply: {
+                    response_json: '{"flowName":"signup_complete","name":"Danish","flow_token":"TOKEN_001"}',
+                    body: 'Sent',
+                    name: 'flow',
+                  },
+                },
+              },
+            ],
+          },
+          field: 'messages',
+        },
+      ],
+    },
+  ],
+};
+
 const statusSentWebhook = {
   object: 'whatsapp_business_account',
   entry: [

@@ -1,37 +1,7 @@
 // ============================================================================
-// meta-cloud-api-wrapper — Main entry point
+// Messages barrel — re-export types and builders
 // ============================================================================
 
-// ---- Client (sending messages) ----
-export { WhatsAppClient } from './client/index.js';
-
-// ---- Parser (receiving webhooks) ----
-export { parseWebhook } from './parser/index.js';
-export { messageRegistry, type MessageHandler } from './parser/incoming/registry.js';
-
-// ---- Message builders (advanced: build payloads without sending) ----
-export {
-  buildPayload,
-  buildTextMessage,
-  buildImageMessage,
-  buildVideoMessage,
-  buildAudioMessage,
-  buildDocumentMessage,
-  buildStickerMessage,
-  buildLocationMessage,
-  buildContactsMessage,
-  buildReactionMessage,
-  buildInteractiveButtonsMessage,
-  buildInteractiveListMessage,
-  buildSingleProductMessage,
-  buildMultiProductMessage,
-  buildCatalogMessage,
-  buildTemplateMessage,
-  buildMarkAsReadPayload,
-} from './messages/index.js';
-
-// ---- Types ----
-export * from './types/index.js';
 export type {
   // Config
   ClientConfig,
@@ -77,4 +47,24 @@ export type {
   SendResult,
   SendSuccess,
   SendError,
-} from './messages/index.js';
+} from './types.js';
+
+export {
+  buildPayload,
+  buildTextMessage,
+  buildImageMessage,
+  buildVideoMessage,
+  buildAudioMessage,
+  buildDocumentMessage,
+  buildStickerMessage,
+  buildLocationMessage,
+  buildContactsMessage,
+  buildReactionMessage,
+  buildInteractiveButtonsMessage,
+  buildInteractiveListMessage,
+  buildSingleProductMessage,
+  buildMultiProductMessage,
+  buildCatalogMessage,
+  buildTemplateMessage,
+  buildMarkAsReadPayload,
+} from './builders.js';
