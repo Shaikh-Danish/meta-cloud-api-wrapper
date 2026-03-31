@@ -1,0 +1,56 @@
+{
+  "name": "meta-cloud-api-wrapper",
+  "version": "1.0.0",
+  "description": "Comprehensive, type-safe TypeScript wrapper for the Meta Cloud API. Effortlessly parse webhooks, send messages, manage flows, and build templates for WhatsApp Business.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "whatsapp",
+    "whatsapp-cloud-api",
+    "whatsapp-business",
+    "meta",
+    "webhook",
+    "parser",
+    "typescript"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.1.0"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "zod": "^4.3.6"
+  }
+}
