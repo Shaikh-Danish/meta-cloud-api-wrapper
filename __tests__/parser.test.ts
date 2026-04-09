@@ -820,14 +820,11 @@ describe('parseWebhook', () => {
       const results = parseWebhook(interactiveButtonReplyWebhook);
       const data = results[0].success ? (results[0].data as IncomingPayload) : null;
       expect(data).not.toBeNull();
-      expect(data!.type).toBe('interactive');
+      expect(data!.type).toBe('button');
 
-      if (data!.message.type === 'interactive') {
-        expect(data!.message.interactive.type).toBe('button_reply');
-        if (data!.message.interactive.type === 'button_reply') {
-          expect(data!.message.interactive.buttonReply.id).toBe('btn_yes');
-          expect(data!.message.interactive.buttonReply.title).toBe('Yes');
-        }
+      if (data!.message.type === 'button') {
+        expect(data!.message.button.payload).toBe('btn_yes');
+        expect(data!.message.button.text).toBe('Yes');
       }
     });
 

@@ -14,7 +14,7 @@ export const buttonHandler: MessageHandler<Extract<IncomingMessage, { type: 'but
   },
 };
 
-export const interactiveHandler: MessageHandler<Extract<IncomingMessage, { type: 'interactive' }>> = {
+export const interactiveHandler: MessageHandler<IncomingMessage> = {
   type: 'interactive',
   parse(rawMessage: any) {
     const { interactive } = rawMessage;
@@ -35,13 +35,10 @@ export const interactiveHandler: MessageHandler<Extract<IncomingMessage, { type:
 
     if (interactive.type === 'button_reply') {
       return {
-        type: 'interactive',
-        interactive: {
-          type: 'button_reply',
-          buttonReply: {
-            id: interactive.button_reply.id,
-            title: interactive.button_reply.title,
-          },
+        type: 'button',
+        button: {
+          payload: interactive.button_reply.id,
+          text: interactive.button_reply.title,
         },
       };
     }
