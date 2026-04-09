@@ -1,12 +1,12 @@
 import type { MessageHandler } from '../registry.js';
 import type { IncomingMessage } from '../../../types/incoming.js';
 
-export const buttonHandler: MessageHandler<Extract<IncomingMessage, { type: 'button' }>> = {
+export const buttonHandler: MessageHandler<Extract<IncomingMessage, { type: 'quick_reply' }>> = {
   type: 'button',
   parse(rawMessage: any) {
     return {
-      type: 'button',
-      button: {
+      type: 'quick_reply',
+      quickReply: {
         payload: rawMessage.button.payload,
         text: rawMessage.button.text,
       },
@@ -35,8 +35,8 @@ export const interactiveHandler: MessageHandler<IncomingMessage> = {
 
     if (interactive.type === 'button_reply') {
       return {
-        type: 'button',
-        button: {
+        type: 'quick_reply',
+        quickReply: {
           payload: interactive.button_reply.id,
           text: interactive.button_reply.title,
         },

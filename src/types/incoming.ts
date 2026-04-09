@@ -116,7 +116,7 @@ export interface ContactCard {
 
 // ---- Interactive message sub-types ----
 
-export interface ButtonMessageData {
+export interface QuickReplyData {
   payload: string;
   text: string;
 }
@@ -189,7 +189,7 @@ export type IncomingMessage =
   | { type: 'sticker'; sticker: StickerMessageData }
   | { type: 'location'; location: LocationMessageData }
   | { type: 'contacts'; contacts: ContactCard[] }
-  | { type: 'button'; button: ButtonMessageData }
+  | { type: 'quick_reply'; quickReply: QuickReplyData }
   | { type: 'interactive'; interactive: InteractiveMessageData }
   | { type: 'order'; order: OrderMessageData }
   | { type: 'reaction'; reaction: ReactionMessageData }

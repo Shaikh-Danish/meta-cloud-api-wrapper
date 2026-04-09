@@ -26,7 +26,7 @@ export type {
   ContactPhone,
   ContactUrl,
   ContactCard,
-  ButtonMessageData,
+  QuickReplyData,
   ListReplyData,
   ButtonReplyData,
   InteractiveMessageData,
